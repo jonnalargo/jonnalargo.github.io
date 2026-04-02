@@ -28,8 +28,9 @@
             <h1 class="hero-banner-text">Hi, I am Jonna</h1>
         </section>
 
-        <!-- Hero Grid -->
-        <section class="hero-grid container" id="hero">
+        <!-- Main Grid Layout -->
+        <section class="main-grid container" id="mainGrid">
+            <!-- Row 1: Hero & About -->
             <div class="hero-card">
                 <div class="hero-card-banner">
                     <img src="assets/img/banner/Banner Image.jpg" alt="Banner">
@@ -43,13 +44,28 @@
             </div>
             <div class="about-card">
                 <h2 class="card-heading">About</h2>
-                <p class="about-text">Hi, I'm Jonna. I'm a multi-skilled and versatile Virtual Assistant for growing businesses, with experience in social media management, lead generation, executive and administrative support, bookkeeping, and auditing. I'm detail-oriented and bring a strong can-do attitude, helping businesses stay organized, efficient, and focused on growth.</p>
+                <p class="about-text">Hi, I'm Jonna. I'm a multi-skilled and versatile Virtual Assistant for growing businesses, with experience in social media management, lead generation, admin support, bookkeeping, and auditing. I bring a strong can-do attitude, helping businesses stay organized and efficient.</p>
                 <a href="portfolio.html" class="btn-primary">View My Work <span class="btn-arrow">↗</span></a>
             </div>
-        </section>
 
-        <!-- Info Grid -->
-        <section class="info-grid container" id="info">
+            <!-- Row 2: Video & Tools -->
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <img src="assets/img/banner/Banner Image.jpg" alt="Video Placeholder">
+                    <div class="play-button">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <span class="video-label">Video Intro</span>
+                </div>
+            </div>
+            <div class="tools-card">
+                <h3 class="card-heading">Tools</h3>
+                <div class="tools-image-container">
+                    <img src="assets/img/tools/Marketing Tools.png" alt="Marketing Tools" class="tools-image">
+                </div>
+            </div>
+
+            <!-- Row 3: Expertise & (CV + Testimonies) -->
             <div class="expertise-card">
                 <h3 class="card-heading">Expertises</h3>
                 <div class="tags-container">
@@ -64,34 +80,45 @@
                     <span class="tag">Appointment Setting</span>
                     <span class="tag">Graphic Design</span>
                     <span class="tag">Campaign Testing</span>
-                    <span class="tag">Cold DM Outreach</span>
                     <span class="tag">Database Management</span>
                     <span class="tag">Client Acquisition Support</span>
-                    <span class="tag">Email Management</span>
-                    <span class="tag">Expense/P&amp;L Monitoring</span>
                     <span class="tag">Quality Control</span>
                     <span class="tag">Bookkeeping</span>
                     <span class="tag">Email Marketing</span>
                 </div>
             </div>
-            <div class="cv-card">
-                <h3 class="card-heading">CV</h3>
-                <div class="cv-download">
-                    <a href="assets/files/cv.pdf" class="btn-primary cv-btn" download>Download ↗</a>
+            <div class="stacked-col">
+                <div class="cv-card-mini">
+                    <h3 class="mini-heading">CV</h3>
+                    <a href="assets/files/cv.pdf" class="btn-primary" download>Download ↗</a>
                 </div>
-            </div>
-            <div class="tools-card">
-                <h3 class="card-heading">Tools</h3>
-                <div class="tools-image-container">
-                    <img src="assets/img/tools/Marketing Tools.png" alt="Marketing Tools" class="tools-image">
+                <div class="testimony-card-mini">
+                    <h3 class="card-heading">Testimonials</h3>
+                    <div class="testimony-scroller">
+                        <div class="testimony-track">
+                            <div class="testimony-item">
+                                <p class="testimony-text">"Jonna's attention to detail has been a game-changer for my business. I highly recommend her!"</p>
+                                <p class="testimony-author">— James C., Director</p>
+                            </div>
+                            <div class="testimony-item">
+                                <p class="testimony-text">"The social media management Jonna provided was exceptional. We saw a noticeable increase in engagement."</p>
+                                <p class="testimony-author">— Elena R., Owner</p>
+                            </div>
+                            <div class="testimony-item">
+                                <p class="testimony-text">"A versatile virtual assistant who stays on top of every deadline. Jonna is truly talented."</p>
+                                <p class="testimony-author">— Marcus L., Lead</p>
+                            </div>
+                            <!-- Duplicated for loop -->
+                            <div class="testimony-item">
+                                <p class="testimony-text">"Jonna's attention to detail has been a game-changer for my business. I highly recommend her!"</p>
+                                <p class="testimony-author">— James C., Director</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Showcase Banner -->
-        <section class="showcase-section container">
-            <div class="showcase-banner" id="showcase"></div>
-        </section>
 
         <!-- Services Section -->
         <section class="services-section" id="services">

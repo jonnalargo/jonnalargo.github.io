@@ -299,13 +299,15 @@ main {
 /* ========================================
    Hero Grid
    ======================================== */
-.hero-grid {
+/* ========================================
+   Main Grid Layout
+   ======================================== */
+.main-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 14px;
-    padding-top: var(--space-xl);
-    padding-bottom: 14px;
-    align-items: start;
+    padding: var(--space-3xl) 0;
+    align-items: stretch;
 }
 
 .hero-card {
@@ -430,28 +432,10 @@ main {
 /* ========================================
    Info Grid (Expertises, CV, Tools)
    ======================================== */
-.info-grid {
-    display: grid;
-    grid-template-columns: 1.8fr 1fr 2.2fr;
+.stacked-col {
+    display: flex;
+    flex-direction: column;
     gap: 14px;
-    padding-bottom: 14px;
-    align-items: start;
-}
-
-.cv-btn {
-    width: 100%;
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
-    white-space: nowrap;
-}
-
-.expertise-card,
-.cv-card,
-.tools-card {
-    border: 1px solid var(--clr-border);
-    border-radius: var(--radius);
-    padding: var(--space-xl);
 }
 
 .card-heading {
@@ -530,47 +514,199 @@ main {
     object-fit: contain;
 }
 
-/* ========================================
-   Showcase Banner
-   ======================================== */
-.showcase-section {
-    padding-bottom: 14px;
+/* Video Card */
+.video-card {
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    aspect-ratio: 16 / 9;
 }
 
-.showcase-banner {
+.video-placeholder {
     width: 100%;
-    min-height: 280px;
-    border-radius: var(--radius);
-    background: linear-gradient(135deg, #c084fc, #a78bfa, #818cf8, #c084fc);
-    background-size: 300% 300%;
-    animation: gradientMove 8s ease infinite;
-    border: 1px solid var(--clr-border);
-    overflow: hidden;
+    height: 100%;
     position: relative;
 }
 
-.showcase-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.15), transparent 40%),
-        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1), transparent 35%);
+.video-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
 }
 
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: var(--clr-white);
+    color: var(--clr-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform var(--transition-fast), background var(--transition-fast);
+}
 
-    50% {
-        background-position: 100% 50%;
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--clr-bg-alt);
+}
+
+.video-label {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    color: var(--clr-white);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* CV Card Mini */
+.cv-card-mini {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    background: var(--clr-surface);
+}
+
+.mini-heading {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.mini-subtext {
+    font-size: 0.75rem;
+    color: var(--clr-text-muted);
+}
+
+.mini-btn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+}
+
+/* Testimony Card Mini */
+.testimony-card-mini {
+    flex: 1;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    overflow: hidden;
+    background: var(--clr-surface);
+}
+
+.testimony-scroller {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.testimony-track {
+    display: flex;
+    flex-direction: column;
+    animation: verticalScroll 12s linear infinite;
+}
+
+.testimony-track:hover {
+    animation-play-state: paused;
+}
+
+.testimony-item {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimony-text {
+    font-size: 0.95rem;
+    color: var(--clr-text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+}
+
+.testimony-author {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--clr-accent);
+    text-transform: uppercase;
+}
+
+/* Share card styles */
+.expertise-card {
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+    background: var(--clr-surface);
+}
+
+.tools-card {
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    background: var(--clr-surface);
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tools-card .card-heading {
+    margin: 1.5rem 1.5rem 0.5rem;
+    padding-bottom: 8px;
+}
+
+.tools-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem 1.5rem;
+    overflow: hidden;
+}
+
+.tools-image {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.border-none {
+    border-bottom: none !important;
+}
+
+@keyframes verticalScroll {
+    0% {
+        transform: translateY(0);
     }
 
     100% {
-        background-position: 0% 50%;
+        transform: translateY(-300px);
     }
 }
+
+/* ========================================
+   Showcase Banner
+   ======================================== */
+
 
 /* ========================================
    Services Section
@@ -905,11 +1041,16 @@ main {
    Responsive
    ======================================== */
 @media (max-width: 900px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
+    .hero-banner {
+        padding: 1.5rem 0 !important;
     }
 
-    .info-grid {
+    .container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .main-grid {
         grid-template-columns: 1fr;
     }
 
@@ -939,7 +1080,7 @@ main {
         height: 100vh;
         background: var(--clr-white);
         border-left: 1px solid var(--clr-border);
-        padding: calc(var(--header-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+        padding: calc(var(--header-height) + var(--space-xl)) var(--space-md) var(--space-md);
         transition: right 0.4s var(--ease);
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
         z-index: 1000;
@@ -952,12 +1093,14 @@ main {
     nav ul {
         flex-direction: column;
         gap: var(--space-sm);
+        width: 100%;
+        align-items: stretch;
     }
 
     nav ul li a {
         display: block;
-        padding: var(--space-md);
-        font-size: 0.95rem;
+        padding: var(--space-sm) var(--space-md);
+        font-size: 1rem;
     }
 
     .cta-title {
