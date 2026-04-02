@@ -57,15 +57,55 @@ function loadHeader() {
     }
 }
 
+/*****************************************
+ * Footer Component
+ *****************************************/
 function loadFooter() {
-    // Footer is currently hidden per design
     const footer = document.getElementById('site-footer');
-    if (footer) {
-        footer.style.display = 'none';
-    }
+    if (!footer) return;
+
+    footer.innerHTML = `
+        <section class="footer-cta">
+            <div class="container text-center">
+                <h2 class="cta-title">Let's Create Something Exceptional Together</h2>
+                <div class="cta-links social-text-links">
+                    <a href="https://www.linkedin.com/in/jonna-mae-largo-4b569613b/" target="_blank" class="social-link">
+                        <div class="platform-info">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </div>
+                        <span class="handle">@jonna-mae-largo</span>
+                    </a>
+                    <a href="https://wa.me/639207217090" target="_blank" class="social-link">
+                        <div class="platform-info">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </div>
+                        <span class="handle">+63 920 721 7090</span>
+                    </a>
+                    <a href="mailto:jonnamlargo@gmail.com" class="social-link">
+                        <div class="platform-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email</span>
+                        </div>
+                        <span class="handle">jonnamlargo@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p class="copyright">&copy; ${new Date().getFullYear()} Jonna Mae Largo. All rights reserved.</p>
+                <div class="footer-links">
+                    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        Back to Top <span class="arrow">↑</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
-// Initialize components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
     loadFooter();

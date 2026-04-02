@@ -396,6 +396,8 @@ main {
     margin-bottom: var(--space-lg);
 }
 
+
+
 .about-text {
     font-size: 1.1rem;
     color: var(--clr-text-secondary);
@@ -581,12 +583,10 @@ main {
 .section-label {
     display: inline-block;
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--clr-text-muted);
-    padding: 6px 14px;
+    color: var(--clr-black);
+    padding: 14px 32px;
     border: 1px solid var(--clr-border);
     border-radius: var(--radius-pill);
     margin-bottom: var(--space-2xl);
@@ -606,13 +606,13 @@ main {
 
 .service-number {
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: var(--space-lg);
 }
 
 .service-desc {
-    font-size: 0.85rem;
+    font-size: 0.975rem;
     color: var(--clr-text-muted);
     line-height: 1.7;
 }
@@ -620,19 +620,68 @@ main {
 /* ========================================
    CTA Section
    ======================================== */
-.cta-section {
-    background: var(--clr-black);
+.cta-section,
+.footer-cta {
+    padding: var(--space-xl) 0;
+    background: #b87e87;
+    /* Original dusty rose */
     color: var(--clr-white);
-    padding: var(--space-3xl) 0 var(--space-2xl);
-    margin-top: var(--space-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-cta {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-links.social-text-links {
+    display: flex;
+    justify-content: center;
+    column-gap: 4.5rem;
+    /* Large horizontal gap */
+    row-gap: 1.5rem;
+    /* Smaller vertical gap for wrap */
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    color: var(--clr-white);
+    transition: opacity var(--transition-fast);
+    padding: 10px 0;
+}
+
+.platform-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.925rem;
+    font-weight: 700;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+.social-link i {
+    font-size: 0.925rem;
+}
+
+.handle {
+    font-size: 0.825rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .cta-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-lg);
     line-height: 1.3;
 }
 
@@ -665,10 +714,71 @@ main {
 }
 
 /* ========================================
-   Footer (Hidden)
+   Footer
    ======================================== */
 #site-footer {
-    display: none !important;
+    background: #b87e87;
+    /* Original dusty rose */
+    color: var(--clr-white);
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 0.75rem var(--space-md);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.back-to-top {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--clr-white);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.back-to-top:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--clr-white);
+}
+
+.footer-social-links {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.footer-social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-social-links a:hover {
+    color: var(--clr-white);
 }
 
 /* ========================================
@@ -678,14 +788,117 @@ main {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-xs);
 }
 
 .section-subtitle {
     color: var(--clr-text-muted);
     font-size: 1.1rem;
     max-width: 600px;
-    margin-bottom: var(--space-3xl);
+    margin: 0 0 1.5rem;
+}
+
+/* ========================================
+   Contact Section
+   ======================================== */
+.contact-section {
+    padding-top: 3rem;
+}
+
+.contact-container {
+    max-width: 680px;
+    margin: 2rem auto 5rem;
+    padding: 0 1.5rem;
+}
+
+.contact-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: 3rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--clr-text);
+    background: var(--clr-bg-alt);
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--clr-accent);
+    background: var(--clr-white);
+}
+
+.form-textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.form-submit {
+    margin-top: 1rem;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    align-self: flex-start;
+}
+
+.form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.form-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
 }
 
 /* ========================================
