@@ -31,7 +31,7 @@
     --transition-fast: 150ms var(--ease);
     --transition-base: 250ms var(--ease);
 
-    --header-height: 56px;
+    --header-height: 80px;
     --notif-height: 36px;
     --max-width: 1180px;
     --radius: 16px;
@@ -132,7 +132,7 @@ img {
 .header-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 0.75rem;
+    padding: 0 var(--space-xl);
     height: 100%;
     display: flex;
     align-items: center;
@@ -147,7 +147,7 @@ img {
     text-transform: uppercase;
     background: var(--clr-accent);
     color: var(--clr-white);
-    padding: 8px 18px;
+    padding: 12px 24px;
     border-radius: var(--radius-sm);
     transition: background var(--transition-fast);
 }
@@ -166,7 +166,7 @@ nav ul li a {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 7px 16px;
+    padding: 10px 20px;
     font-size: 0.78rem;
     font-weight: 600;
     text-transform: uppercase;
