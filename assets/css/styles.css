@@ -752,9 +752,9 @@ main {
    ======================================== */
 .cta-section,
 .footer-cta {
-    padding: var(--space-xl) 0;
-    background: #b87e87;
-    /* Original dusty rose */
+    padding: 4rem 0;
+    background: var(--clr-accent);
+    /* Reverted to pink shade */
     color: var(--clr-white);
     position: relative;
     overflow: hidden;
@@ -1032,6 +1032,214 @@ main {
 }
 
 /* ========================================
+   Portfolio Page
+   ======================================== */
+.portfolio-page {
+    padding-top: var(--space-3xl);
+}
+
+.portfolio-intro {
+    padding-bottom: var(--space-3xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.portfolio-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+.portfolio-description {
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+    font-size: 1.1rem;
+    color: var(--clr-text-secondary);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.portfolio-visual-banner {
+    background: linear-gradient(to bottom, #bae6fd, #e0f2fe);
+    position: relative;
+    padding: 6rem 0 2rem;
+    overflow: hidden;
+    margin-bottom: var(--space-3xl);
+}
+
+.sky-canvas {
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.9;
+    filter: blur(2px);
+}
+
+.cloud-1 {
+    width: 120px;
+    height: 40px;
+    top: 20%;
+    left: 15%;
+}
+
+.cloud-2 {
+    width: 150px;
+    height: 50px;
+    top: 10%;
+    right: 10%;
+}
+
+.cloud-3 {
+    width: 100px;
+    height: 35px;
+    top: 40%;
+    left: 45%;
+}
+
+.gif-box {
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px dashed #b87e87;
+    padding: 2.5rem 5rem;
+    border-radius: var(--radius);
+    color: #b87e87;
+    font-weight: 700;
+    text-align: center;
+    z-index: 2;
+    max-width: 90%;
+}
+
+.hill-landscape {
+    width: 100%;
+    margin-top: -60px;
+}
+
+.hill-landscape svg {
+    width: 100%;
+    height: 160px;
+    display: block;
+}
+
+.portfolio-group {
+    padding: var(--space-2xl) 0;
+}
+
+.group-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #b87e87;
+    /* Pinkish color from image */
+    margin-bottom: var(--space-xl);
+}
+
+.work-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.flyers-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.instagram-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.reels-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.thumbnails-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.work-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    background: var(--clr-bg-alt);
+}
+
+.work-item:hover {
+    transform: translateY(-5px);
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.reel-item {
+    aspect-ratio: 9 / 16;
+}
+
+.portfolio-footer-banner {
+    background: #f8fafc;
+    padding: 8rem 0 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: var(--space-3xl);
+}
+
+.portfolio-footer-banner .container {
+    animation: fadeInZoom 3s ease-out forwards;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #b87e87;
+    margin-bottom: 1rem;
+}
+
+.banner-subtitle {
+    font-size: 0.95rem;
+    color: var(--clr-text-muted);
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.small-hills svg {
+    height: 80px;
+}
+
+/* ========================================
    Responsive
    ======================================== */
 @media (max-width: 900px) {
@@ -1060,7 +1268,25 @@ main {
         min-height: 260px;
     }
 
-    /* Footer Mobile */
+    /* Portfolio Mobile */
+    .flyers-grid,
+    .instagram-grid,
+    .thumbnails-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-title {
+        font-size: 2.5rem;
+    }
+
+    .group-title {
+        font-size: 2rem;
+    }
+
+    .banner-title {
+        font-size: 1.8rem;
+    }
+
     .cta-links.social-text-links {
         flex-direction: column;
         align-items: center;
@@ -1125,5 +1351,17 @@ main {
 
     .about-heading {
         font-size: 1.4rem;
+    }
+
+    /* Portfolio extra small */
+    .flyers-grid,
+    .instagram-grid,
+    .thumbnails-grid,
+    .reels-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-title {
+        font-size: 2.2rem;
     }
 }
