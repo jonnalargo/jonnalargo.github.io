@@ -1172,6 +1172,10 @@ main {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.websites-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .work-item {
     border-radius: 8px;
     overflow: hidden;
@@ -1184,15 +1188,129 @@ main {
     transform: translateY(-5px);
 }
 
-.work-item img {
+.work-item img,
+.work-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.reel-item {
+/* Ultra-Realistic Phone Mockup Styling */
+.phone-mockup {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 25px 12px;
+    background: #080808; /* Deep black obsidian frame */
+    border-radius: 48px;
+    box-shadow:
+        0 40px 80px -20px rgba(0, 0, 0, 0.6),
+        inset 0 0 1px 1px rgba(255, 255, 255, 0.15),
+        /* Rim light */
+        0 0 0 2px #1f1f1f;
+    /* Outer steel casing */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 5;
+}
+
+/* Side Buttons (Volume & Power) */
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 100px;
+    width: 3px;
+    height: 35px;
+    background: #2a2a2a;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 45px 0 #2a2a2a;
+    /* Volume buttons */
+    z-index: -1;
+}
+
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 130px;
+    width: 3px;
+    height: 55px;
+    background: #2a2a2a;
+    border-radius: 0 3px 3px 0;
+    z-index: -1;
+}
+
+/* Hardware Notch & Speaker */
+.phone-notch-area {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 28px;
+    background: #080808;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8px;
+}
+
+.phone-speaker {
+    width: 35px;
+    height: 3px;
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.phone-screen {
+    position: relative;
+    width: 100%;
     aspect-ratio: 9 / 16;
+    background: #000;
+    border-radius: 34px;
+    overflow: hidden;
+    display: block;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Glass Reflection Overlay */
+.phone-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(105deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.08) 40%,
+            transparent 41%,
+            transparent 100%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.reel-item {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+}
+
+.reel-item:hover .phone-mockup {
+    transform: translateY(-12px) rotateX(4deg) rotateY(-2deg) scale(1.03);
+}
+
+.phone-screen video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 
 .portfolio-footer-banner {
@@ -1271,7 +1389,8 @@ main {
     /* Portfolio Mobile */
     .flyers-grid,
     .instagram-grid,
-    .thumbnails-grid {
+    .thumbnails-grid,
+    .websites-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1357,7 +1476,8 @@ main {
     .flyers-grid,
     .instagram-grid,
     .thumbnails-grid,
-    .reels-grid {
+    .reels-grid,
+    .websites-grid {
         grid-template-columns: 1fr;
     }
 
