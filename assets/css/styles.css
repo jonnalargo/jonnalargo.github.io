@@ -1173,7 +1173,7 @@ main {
 }
 
 .websites-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .work-item {
@@ -1191,9 +1191,15 @@ main {
 .work-item img,
 .work-item video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
+}
+
+.scrollable-screen img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: unset !important;
 }
 
 /* Ultra-Realistic Phone Mockup Styling */
@@ -1277,6 +1283,15 @@ main {
     display: block;
     z-index: 1;
     border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.scrollable-screen {
+    overflow-y: auto !important;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.scrollable-screen::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
 }
 
 /* Glass Reflection Overlay */
