@@ -386,13 +386,22 @@ main {
     font-weight: 700;
     color: var(--clr-black);
     line-height: 1.1;
+    margin-bottom: var(--space-xs);
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--clr-accent);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 /* About Card */
 .about-card {
     border: 1px solid var(--clr-border);
     border-radius: var(--radius);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     display: flex;
     flex-direction: column;
 }
@@ -409,8 +418,9 @@ main {
 .about-text {
     font-size: 1.1rem;
     color: var(--clr-text-secondary);
-    line-height: 1.75;
-    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    text-align: justify;
 }
 
 .btn-primary {
@@ -448,7 +458,7 @@ main {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     padding-bottom: 12px;
     border-bottom: 1px solid var(--clr-border);
 }
