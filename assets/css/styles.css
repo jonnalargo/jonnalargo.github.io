@@ -431,7 +431,7 @@ main {
     color: var(--clr-white);
     padding: 12px 24px;
     border-radius: var(--radius-sm);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: background var(--transition-fast);
     width: fit-content;
@@ -594,7 +594,7 @@ main {
 
 .mini-btn {
     padding: 8px 16px;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
 }
 
 /* Testimony Card Mini */
@@ -896,7 +896,7 @@ main {
     padding: 8px 16px;
     border-radius: var(--radius-sm);
     font-family: inherit;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: all var(--transition-fast);
 }
@@ -1008,7 +1008,7 @@ main {
 .form-submit {
     margin-top: 1rem;
     padding: 14px 28px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     cursor: pointer;
     border: none;
     align-self: flex-start;
@@ -1073,67 +1073,68 @@ main {
 .portfolio-description {
     max-width: 800px;
     margin: 0 auto var(--space-2xl);
-    font-size: 1.1rem;
+    font-size: 1.40rem;
     color: var(--clr-text-secondary);
     line-height: 1.6;
     text-align: center;
 }
 
 .portfolio-visual-banner {
-    background: linear-gradient(to bottom, #bae6fd, #e0f2fe);
+    background: var(--clr-bg);
     position: relative;
-    padding: 6rem 0 2rem;
+    padding: 2rem 0 0;
     overflow: hidden;
-    margin-bottom: var(--space-3xl);
+    margin-bottom: var(--space-xl);
 }
 
 .sky-canvas {
-    height: 400px;
+    height: 500px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.cloud {
-    position: absolute;
-    background: white;
-    border-radius: 50px;
-    opacity: 0.9;
-    filter: blur(2px);
-}
-
-.cloud-1 {
-    width: 120px;
-    height: 40px;
-    top: 20%;
-    left: 15%;
-}
-
-.cloud-2 {
-    width: 150px;
-    height: 50px;
-    top: 10%;
-    right: 10%;
-}
-
-.cloud-3 {
-    width: 100px;
-    height: 35px;
-    top: 40%;
-    left: 45%;
+    background: var(--clr-bg);
 }
 
 .gif-box {
-    background: rgba(255, 255, 255, 0.4);
-    border: 2px dashed #b87e87;
-    padding: 2.5rem 5rem;
-    border-radius: var(--radius);
-    color: #b87e87;
-    font-weight: 700;
-    text-align: center;
-    z-index: 2;
-    max-width: 90%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    perspective: 1200px;
+}
+
+.scrolling-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    padding: 250px 150px 150px; /* Heavily increased top padding */
+    width: 200%; 
+    transform: rotateX(15deg) rotateZ(-10deg);
+    animation: diagonalScroll 60s linear infinite;
+    opacity: 0.95;
+}
+
+.scrolling-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background: #eee;
+}
+
+@keyframes diagonalScroll {
+    0% {
+        transform: rotateX(15deg) rotateZ(-10deg) translate(-10%, -25%);
+    }
+    100% {
+        transform: rotateX(15deg) rotateZ(-10deg) translate(-30%, -65%);
+    }
 }
 
 .hill-landscape {
@@ -1219,7 +1220,8 @@ main {
     max-width: 350px;
     margin: 0 auto;
     padding: 25px 12px;
-    background: #080808; /* Deep black obsidian frame */
+    background: #080808;
+    /* Deep black obsidian frame */
     border-radius: 48px;
     box-shadow:
         0 40px 80px -20px rgba(0, 0, 0, 0.6),
@@ -1297,11 +1299,13 @@ main {
 
 .scrollable-screen {
     overflow-y: auto !important;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
 }
 
 .scrollable-screen::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
+    display: none;
+    /* Hide scrollbar for Chrome/Safari */
 }
 
 /* Glass Reflection Overlay */
@@ -1339,23 +1343,37 @@ main {
 }
 
 .portfolio-footer-banner {
-    background: #f8fafc;
-    padding: 8rem 0 0;
     position: relative;
+    padding: 10rem 0;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    margin-top: var(--space-3xl);
+    background-image: linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)), url('../img/banner/artificial-intelligence-ai-background-concept-with-chatbot-machine-learning-abstract-line-and-wave-flow-illustration-eps10-free-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .portfolio-footer-banner .container {
-    animation: fadeInZoom 3s ease-out forwards;
+    opacity: 0;
 }
 
-@keyframes fadeInZoom {
+.portfolio-footer-banner.reveal-banner .container {
+    animation: dramaticZoom 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes dramaticZoom {
     0% {
         opacity: 0;
-        transform: scale(0.98);
+        transform: scale(0.3);
     }
-
+    50% {
+        opacity: 1;
+        transform: scale(1.5); /* Sways large enough to feel high-impact */
+    }
     100% {
         opacity: 1;
         transform: scale(1);
@@ -1364,10 +1382,11 @@ main {
 
 .banner-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 2.5rem; /* Slightly larger */
     font-weight: 700;
     color: #b87e87;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .banner-subtitle {
