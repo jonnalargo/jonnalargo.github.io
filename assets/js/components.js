@@ -27,7 +27,7 @@ function loadHeader() {
 
     const headerHTML = `
         <div class="header-container">
-            <a href="index.html" class="logo">Jonna | Multi-Skilled VA</a>
+            <a href="index.html" class="logo">Jonna | AI-Powered VA</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>

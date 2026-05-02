@@ -608,7 +608,7 @@ main {
 }
 
 .testimony-scroller {
-    height: 100px;
+    height: 150px;
     overflow: hidden;
     position: relative;
     mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
@@ -618,7 +618,7 @@ main {
 .testimony-track {
     display: flex;
     flex-direction: column;
-    animation: verticalScroll 12s linear infinite;
+    animation: verticalScroll 20s linear infinite;
 }
 
 .testimony-track:hover {
@@ -626,10 +626,19 @@ main {
 }
 
 .testimony-item {
-    height: 100px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 10px 0;
+}
+
+.testimony-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: var(--radius-sm);
 }
 
 .testimony-text {
@@ -703,7 +712,7 @@ main {
     }
 
     100% {
-        transform: translateY(-300px);
+        transform: translateY(-750px);
     }
 }
 
