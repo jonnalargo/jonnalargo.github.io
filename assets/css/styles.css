@@ -476,7 +476,7 @@ main {
     background: var(--clr-bg-alt);
     border: 1px solid var(--clr-border);
     border-radius: var(--radius-pill);
-    font-size: 0.75rem;
+    font-size: 0.975rem;
     color: var(--clr-text-secondary);
     font-weight: 500;
     transition: all var(--transition-fast);
@@ -1120,8 +1120,9 @@ main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
-    padding: 250px 150px 150px; /* Heavily increased top padding */
-    width: 200%; 
+    padding: 250px 150px 150px;
+    /* Heavily increased top padding */
+    width: 200%;
     transform: rotateX(15deg) rotateZ(-10deg);
     animation: diagonalScroll 60s linear infinite;
     opacity: 0.95;
@@ -1141,6 +1142,7 @@ main {
     0% {
         transform: rotateX(15deg) rotateZ(-10deg) translate(-10%, -25%);
     }
+
     100% {
         transform: rotateX(15deg) rotateZ(-10deg) translate(-30%, -65%);
     }
@@ -1379,10 +1381,13 @@ main {
         opacity: 0;
         transform: scale(0.3);
     }
+
     50% {
         opacity: 1;
-        transform: scale(1.5); /* Sways large enough to feel high-impact */
+        transform: scale(1.5);
+        /* Sways large enough to feel high-impact */
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
@@ -1391,7 +1396,8 @@ main {
 
 .banner-title {
     font-family: var(--font-heading);
-    font-size: 2.5rem; /* Slightly larger */
+    font-size: 2.5rem;
+    /* Slightly larger */
     font-weight: 700;
     color: #b87e87;
     margin-bottom: 0;
