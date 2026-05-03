@@ -1214,9 +1214,42 @@ main {
 .work-item video {
     width: 100%;
     height: auto;
-    object-fit: contain;
     display: block;
 }
+
+/* Portfolio CTA Buttons */
+.cta-container {
+    text-align: center;
+    padding: 1rem;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--clr-accent);
+    color: var(--clr-white) !important;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.view-btn:hover {
+    background: var(--clr-accent-hover);
+}
+
+.work-item.reel-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+}
+}
+
 
 .scrollable-screen img {
     width: 100% !important;
