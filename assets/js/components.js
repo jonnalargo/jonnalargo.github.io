@@ -13,6 +13,7 @@ function loadHeader() {
     const currentPage = getCurrentPage();
 
     const navLinks = [
+        { href: 'index.html', label: 'Home', icon: '', outlined: true },
         { href: 'portfolio.html', label: 'Portfolio', icon: '', outlined: true },
         { href: 'about.html', label: 'About', icon: '', outlined: true },
         { href: 'contact.html', label: 'Contact', icon: '', outlined: true }
